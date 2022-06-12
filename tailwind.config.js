@@ -5,7 +5,7 @@ module.exports = {
     // purge: ["./pages/**/*.tsx", "./src/**/*.tsx"],
     content: ["./pages/**/*.tsx", "./src/components/**/*.tsx"],
     darkMode: "class", // or 'media' or 'class'
-    safelist: [],
+    safelist: ["bg-[rgba(0,0,0,.7)]"],
     theme: {
         extend: {
             height: {
@@ -206,7 +206,15 @@ module.exports = {
                     borderRadius: ".25rem !important",
                     fontWeight: "600 !important",
                 },
-                // ...
+                ".bg-header": {
+                    backgroundColor: "rgba(0,0,0,.7)",
+                },
+                ".bg-footer": {
+                    backgroundColor: "#27282c",
+                },
+                ".social-icon-hover": {
+                    backgroundColor: "hsla(0,0%,100%,.1)",
+                },
             });
         }),
     ],

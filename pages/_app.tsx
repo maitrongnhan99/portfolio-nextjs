@@ -10,6 +10,7 @@ import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
 import { NextPage } from "next";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 const ThemeProvider: PropsWithChildren<any> = dynamic<any>(() =>
     import("next-themes").then((md) => md.ThemeProvider),
@@ -34,8 +35,18 @@ type MyAppsProps = AppProps & {
 function MyApp({ Component, pageProps }: MyAppsProps): JSX.Element {
     const getLayout = Component.getLayout ?? ((page: Page) => page);
     const Layout = Component.layout ?? Fragment;
+
     return (
         <ThemeProvider attribute={"class"} defaultTheme={"light"}>
+            <Head>
+                <meta
+                    name="viewport"
+                    content="initial-scale=1.0, width=device-width"
+                />
+                <meta charSet="UTF-8" />
+                <link rel="profile" href="https://gmpg.org/xfn/11" />
+                <title>@maitrongnhan99</title>
+            </Head>
             <SimpleReactLightboxLazy>
                 <Layout>
                     {getLayout(

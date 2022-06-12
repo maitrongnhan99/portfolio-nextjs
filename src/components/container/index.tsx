@@ -1,3 +1,17 @@
-export const Container = ({ children }: { children?: any }) => {
-    return <div className="min-h-screen flex flex-col">{children}</div>;
+import { FC, PropsWithChildren } from "react";
+
+interface ContainerProps {
+    children?: any;
+    wrapperClass?: string;
+}
+
+export const Container: FC<PropsWithChildren<ContainerProps>> = ({
+    children,
+    wrapperClass,
+}) => {
+    return (
+        <div className={`container ${wrapperClass ? wrapperClass : ""}`}>
+            {children}
+        </div>
+    );
 };
